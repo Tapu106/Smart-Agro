@@ -1,0 +1,171 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box  ;
+}
+
+.body{
+    font-size: 20%;
+    overflow-x: hidden;
+    color: white;
+}
+
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/fin.jpg');
+    height: 100vh;
+    background-size: cover;
+    /* width: 100vh; */
+    background-repeat: no-repeat;
+
+}
+.clearfix:after{
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0px;
+    clear: both;;
+}
+.row{
+    max-width: 1180px;
+    margin: 0 auto;
+    
+}
+.logo{
+
+    height: 120px;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+}
+
+.main-nav{
+    float: right;
+    margin-top: 60px;
+
+}
+.main-nav li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 40px;
+}
+
+.main-nav li a{
+    padding: 5px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.main-nav li a:hover{
+    border-bottom: 2px solid #fff;
+
+}
+
+.main-conent-header{
+    width: 1180px;
+    position: absolute;
+    /* border: 1px solid red; */
+    top: 55%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+h1{
+    color: #fff;
+    font-size:240%;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 200px;
+    transition: background-color 0.2s,border 0.2s,color  0.2;
+}
+
+.btn-full{
+    background-color: transparent;
+    color: #fff;
+    margin-right: 15px;
+    border:1px solid #fff;
+
+}
+
+.btn-full:hover{
+    background-color: blueviolet;
+
+}
+.btn-nav{
+    background-color: transparent;
+    color: #fff;
+    /* margin-right: 15px; */
+    border:1px solid #fff;
+
+}
+.btn-nav:hover{
+    background-color: blueviolet ;
+}
+
+.colorchange{
+    animation: colorchangesmart 1s infinite;
+
+}
+
+@keyframes colorchangesmart{
+    0%{color:red;}
+    25%{color:purple;}
+    50%{color: white;}
+    100%{color: purple;}
+}
+
+.mobile-icon{
+    display: none;
+}
+
+/* ///////responsive queries */
+
+@media only screen and (max-width:1180px){
+    .main-conent-header{
+        width: 100%;
+        padding: 0 2%;
+    }
+
+}
+
+@media only screen and(max-width: 998px)
+{
+    h1{font-size: 200%;}
+}
+
+
+@media only screen and(max-width:768px)
+{
+    h1{font-size: 180%;}
+    .main-nav{display: none;}
+
+    .mobile-icon{
+        
+        display: inline-block;
+        color: #fff;
+        float: right;
+        margin-top: 30px;
+            margin-right: 20px;
+    }
+
+    .main-nav{
+        float: left;
+    }
+    .main-nav li {
+        display: block;
+        margin-top: 10px;
+    }
+}

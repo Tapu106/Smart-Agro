@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #createDocButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:#d6132d;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+#createDocButton :hover {
+  background-color: black;
+}
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: #d6132d;
+  font-size: 30px;
+}
+#fullpage{
+    background:lightblue;
+}
+ </style>
+    <title>My Home page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="contact1-form validate-form" action="/register" method="post">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 " data-validate="Valid email is required: ex@abc.xyz">
+
+                        <div class="md-form mb-5 validate-input" data-validate="Name is required">
+                            <label data-error="wrong" data-success="right">username</label>
+                            <input type="text" name="name" value="" class="form-control validate input1">
+                            
+                        </div>
+                        <div class="md-form mb-5 validate-input">
+                            <label data-error="wrong" data-success="right">email</label>
+                            <input type="email" name="email" value="" class="form-control validate input1">
+                            
+                        </div>
+
+                        <div class="md-form mb-4 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <label data-error="wrong" data-success="right">password</label>
+                            <input type="password" name="password" class="form-control validate input1">
+                            
+                        </div>
+
+                        
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>Cancel</button>
+                        <button class="btn btn-primary" name="reg_user">Sign up</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="contact1-form validate-form"action="/login" method="post">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5 validate-input">
+                            <label data-error="wrong" data-success="right">email</label>
+                            <input type="text" name="email" class="form-control validate input1" data-validate = "Valid email is required: ex@abc.xyz">
+                            
+                        </div>
+
+                        <div class="md-form mb-4 validate-input">
+                            <label data-error="wrong" data-success="right">password</label>
+                            <input type="password" name="password" class="form-control validate input1" data-validate = "Valid email is required: ex@abc.xyz">
+                            
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-default">Forget Password</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>Cancel</button>
+                        <button type="submit" class="btn btn-primary" name="login_user">Login</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Collaborative Document Editor</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" class="glyphicon glyphicon-user" role="button" aria-pressed="true" data-toggle="modal"
+                        data-target="#modalRegisterForm"> SignUp</a></li>
+                <li><a href="#" class="glyphicon glyphicon-log-in" role="button" aria-pressed="true" data-toggle="modal"
+                        data-target="#modalLoginForm">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid"id='fullpage'>
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" id="myImg" src="images/background.jpg" alt="">
+                <div class="centered">Share your file and edit the same file collaboratively and simultaneously in real
+                    time.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-23581568-13');
+    </script>
+
+    <!--===============================================================================================-->
+    <script src="javascript/main.js"></script>
+
+</body>
+
+</html>

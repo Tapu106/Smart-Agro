@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css1/bootstrap.css" type="text/css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+    <a class="navbar-brand" href="/">Agro Smart!!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/queryAll">queryAllCrops <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/create">Create Crop</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="/changeOwner">Change Owner</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/SellHistory">Sell History</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link " href="/BuyHistory">Buy History</a>
+         </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    </form>
+  </div>
+  <form method="POST" action="/queryiD" style="padding-top: 50px; padding-left:50px">
+    <label >Search for a Crop</label>
+    <input type="text" name="croptype" placeholder="Aush">
+    <input type="submit" value="Search">
+
+</body>
+
+</html>
