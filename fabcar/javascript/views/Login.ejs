@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome</title>
+    <title>Welcome</title> 
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 
     <link rel="stylesheet" href="/css1/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/css1/main.css">
-</head>
+    <link rel="stylesheet" href="/css1/login.css">
 
+<head>
+    
 <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
     <a class="navbar-brand" href="/">Agro Smart!!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -36,27 +38,34 @@
         </form> -->
     </div>
 </nav>
+</head>
 
-<div class="image" style="height: 60px;">
+<body>
+<!-- <div class="image" style="height: 60px;">
     <div class="container ">
         <div class="row">
             <h1>Welcome!!!</h1>
         </div>
     </div>
+</div> -->
+<div class="body2"></div>
+
+
+<div class="login-box">
+    <img src="../images/avatar.png" class="avatar">
+        <h1>Login Here</h1>
+            <form action="/login" method="POST">
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter your email">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+            <!-- <a href="#">Forget Password??</a>     -->
+            </form>
+        
+        
+        </div>
 </div>
-
-<form action="/login" method="POST" style="margin-left: 120px;">
-    
-    Email:<br>
-    <input type="text" name="email" placeholder="Karim"><br>
-    <br>
-    Password:<br>
-    <input type="password" name="password" placeholder="Barishal"><br>
-    <br>
-    <input type="submit" value="Create">
-
-</form>
-
 </body>
 
 </html>

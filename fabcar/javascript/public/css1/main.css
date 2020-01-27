@@ -1,8 +1,97 @@
-.image{
+/* .image{
 
     background-image: url('../images/wall.png');
     background-size: 100% 100%;
-    /* background-repeat: no-repeat; */
+    /* background-repeat: no-repeat; 
     
 
+}*/
+
+        
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/image.jpg');
+    background-size: 100%;
+    background-position: center;
+    font-family: sans-serif;
 }
+.body2{
+    width: auto;
+    height: 800px;
+    background-image: url('../images/image.jpg');
+    background-size: 100%;
+    background-position: center;
+    font-family: sans-serif;
+}
+.register-box{
+    width: 320px;
+    height: 700px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 80%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+h1{
+    margin-top: -10px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.register-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.register-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.register-box input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    /* height: 40px; */
+    color: #fff;
+    font-size: 16px;
+}
+.register-box input[type="submit"]
+{
+    border: none;
+    outline: none;
+    /* height: 40px; */
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.register-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+
+.register-box a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.register-box a:hover
+{
+    color: #39dc79;
+}   

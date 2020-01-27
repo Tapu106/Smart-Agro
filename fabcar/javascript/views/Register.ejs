@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css1/main.css">
 </head>
 
+<body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
     <a class="navbar-brand" href="/">Agro Smart!!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -37,41 +38,59 @@
     </div>
 </nav>
 
-<div class="image" style="height: 60px;">
+<!-- <div class="image" style="height: 60px;">
     <div class="container ">
         <div class="row">
-            <h1>Welcom</h1>
+            <h1>Welcome</h1>
         </div>
     </div>
-</div>
-
-<form action="register" method="POST" style="margin-left: 120px;">
-    Name:<br>
-    <input type="text" name="name" placeholder="name"><br>
-    <br>
-    Email:<br>
-    <input type="text" name="email" placeholder="Karim"><br>
-    <br>
-    Password:<br>
-    <input type="password" name="password" placeholder="Barishal"><br>
-    <br>
-    Contact:<br>
-    <input type="text" name="Contact_No" placeholder="66666"><br>
-    <br>
-    Address:<br>
-    <input type="text" name="Address" placeholder="Aush"><br>
-    <br>
-    userType:<br>
-    <select name="userType">
-        <option value="Govt" >GOVT</option>
-        <option value="Farmer" >FARMER</option>
+</div> -->
+<div class="body2"></div>
+   <div class="register-box">
+    <img src="../images/avatar.png" class="avatar">
+        <h1>Register Here</h1>
+        <form action="register" method="POST">
+            Name:<br>
+            <input type="text" name="name" placeholder="name"><br>
+            <br>
+            Email:<br>
+            <input type="text" name="email" placeholder="example@gmail.com"><br>
+            <br>
+            Password:<br>
+            <input type="password" name="password"><br>
+            <br>
+            Contact:<br>
+            <input type="text" name="Contact_No" placeholder=""><br>
+            <br>
+            Address:<br>
+            <input type="text" name="Address" placeholder=""><br>
+            <br>
+            userType:<br>
+            <select name="userType">
+                <option value="Govt" >GOVT</option>
+                <option value="Farmer" >FARMER</option>
+                
+              </select><br>
+            <br>
+           
+            <input type="submit" value="Create">
         
-      </select><br>
-    <br>
-   
-    <input type="submit" value="Create">
-
-</form>
+        </form>    
+         <!-- <br>
+            userType:<br>
+            <select name="userType">
+                <option value="Govt" >GOVT</option>
+                <option value="Farmer" >FARMER</option>
+                
+              </select><br>
+            <br>
+           
+            <input type="submit" value="Create"> -->
+        
+        </form>
+        
+        
+    </div>
 
 </body>
 

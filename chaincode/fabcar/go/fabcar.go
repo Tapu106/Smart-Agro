@@ -154,6 +154,13 @@ func getUser(APIstub shim.ChaincodeStubInterface, email string) User {
 	return userData
 }
 
+//func getKind(APIstub shim.ChaincodeStubInterface, CropKind string) User {
+//	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "Crop").addSelector("CropKind", CropKind).getQueryString()
+//	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
+//	var userData User
+//	_ = json.Unmarshal(user, &userData)
+//	return userData
+//}
 
 
 
@@ -191,8 +198,14 @@ func (s *SmartContract) login(APIstub shim.ChaincodeStubInterface, args []string
 func (s *SmartContract) queryByKind(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
 	cropKind := args[0]
-	queryString := fmt.Sprintf("{\"selector\":{\"DocType\":\"Crop\",\"CropKind\": \"%s\"}}", cropKind)
-
+	//queryString := fmt.Sprintf("{\"selector\":{\"DocType\":\"Crop\",\"CropKind\": \"%s\"}}", cropKind)
+	//
+	//queryResults, err := getQueryResultForQueryString(APIstub, queryString)
+	//if err != nil {
+	//	return shim.Error(err.Error())
+	//}
+	//return shim.Success(queryResults)
+	queryString := newCouchQueryBuilder().addSelector("Doctype","Crop").addSelector("CropKind",cropKind).getQueryString()
 	queryResults, err := getQueryResultForQueryString(APIstub, queryString)
 	if err != nil {
 		return shim.Error(err.Error())

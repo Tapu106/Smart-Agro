@@ -44,42 +44,64 @@ app.get('/', function (req, res) {
 });
 
 app.get('/register', function (req, res) {
-    res.render('Register');
+   res.render('Register');
+    
 });
 
 app.get('/login', function (req, res) {
-    res.render('Login');
+  
+        res.render('Login');
+    
 });
 
 app.get('/index', function (req, res) {
-    res.render('index1');
+  
+    
+        res.render('index1');
+   
+    
 });
 
 app.get('/logout', function (req, res) {
-    res.clearCookie("tapu");
+    
+        res.clearCookie("tapu");
     res.redirect('/register');
+   
+    
+    
 });
 
 
 
 
 app.get('/queryAll', function (req, res) {
-    res.render('queryAll');
+   
+        res.render('queryAll');
+  
+    
 });
 
 app.get('/create', function (req, res) {
+   
+         
     var user = req.signedCookies.user;
     console.log("user found",user);    
     res.render('create', { user: user});
+    
+   
 });
 // app.get('/queryID', function (req, res) {
 //     res.render('queryID');
 // });
 
 app.get('/changeOwner', function (req, res) {
-    var user = req.signedCookies.user;
-    console.log("user found",user);    
-    res.render('changeOwner', { user: user});
+   
+        var user = req.signedCookies.user;
+        console.log("user found",user);    
+        res.render('changeOwner', { user: user});
+    
+
+    
     
 });
 
@@ -119,7 +141,7 @@ app.post('/register', async function (req, res) {
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
         await contract.submitTransaction('register', req.body.name, req.body.email, sha256(req.body.password), req.body.Contact_No, req.body.Address,req.body.userType);
         console.log('Transaction has been submitted');
-        res.render('Login')
+        res.redirect('/login')
         // Disconnect from the gateway.
         await gateway.disconnect();
 
@@ -193,7 +215,7 @@ app.post('/query', async function (req, res) {
         else {
 
             const gateway = new Gateway();
-            await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: true, asLocalhost: true } });
+            await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled:  false, asLocalhost: true } });
 
             const network = await gateway.getNetwork('mychannel');
 
@@ -373,10 +395,10 @@ app.post('/queryiD', async function (req, res) {
         // Get the contract from the network.
         const contract = network.getContract('fabcar');
             var result = await contract.submitTransaction('queryByKind', req.body.croptype);
-            console.log('Query has been sucessfull');
-            res.status(200).json({ response: result.toString() });
-
             await gateway.disconnect();
+            console.log('Query has been sucessfull');
+            return res.status(200).json({ response: result.toString() });
+            
         
     }
     catch (error) {
