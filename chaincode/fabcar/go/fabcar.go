@@ -41,9 +41,15 @@ import (
 type SmartContract struct {
 }
 
+type Car struct {
+	Make   string `json:"make"`
+	Model  string `json:"model"`
+	Colour string `json:"colour"`
+	Owner  string `json:"owner"`
+}
+
 type User struct {
-	UserID           string
-	Doctype      string
+	UserID       string
 	Name         string
 	Email        string
 	PasswordHash string
@@ -52,9 +58,9 @@ type User struct {
 	Village      string
 	Thana        string
 	Contact      string
-	Key          string
 	Balance      int
 	UserType     string
+	Doctype      string
 }
 type OwnedCrops struct {
 	CropID    string
@@ -67,11 +73,21 @@ type OwnedCrops struct {
 	Doctype   string
 }
 
+type ForAdCrops struct {
+	CropID     string
+	CropKind   string
+	Quantity   string
+	Price      int
+	SellerID   string
+	SellerName string
+	Doctype    string
+}
+
 type Transaction struct {
-	Id         string
-	CropId     string
-	BuyerId    string
-	OwnerId    string
+	TransID    string
+	CropID     string
+	BuyerID    string
+	SellerID   string
 	CropKind   string
 	CropAmount int
 	Price      int
@@ -97,8 +113,6 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 	// Route to the appropriate handler function to interact with the ledger appropriately
 	if function == "initLedger" {
 		return s.initLedger(APIstub)
-	} else if function == "BuyCrops" {
-		return s.BuyCrops(APIstub, args)
 	} else if function == "queryAllCrops" {
 		return s.queryAllCrops(APIstub)
 	} else if function == "register" {
@@ -107,8 +121,6 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.login(APIstub, args)
 	} else if function == "queryByKind" {
 		return s.queryByKind(APIstub, args)
-	} else if function == "createCrops" {
-		return s.createCrops(APIstub, args)
 	} else if function == "querySellHistory" {
 		return s.querySellHistory(APIstub, args)
 	} else if function == "queryBuyHistory" {
@@ -122,54 +134,26 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 
 func (s *SmartContract) register(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	id := utils.RandomString()
+	userID := utils.RandomString()
 	name := args[0]
 	email := args[1]
 	passwordHash := args[2]
-	key := name + passwordHash
-	Address := args[3]
-	Contact := args[4]
-	Balance := 20000
-	userType := args[5]
-	// Balance:= strconv.Itoa(balance)
+	division := args[3]
+	district := args[4]
+	village := args[5]
+	thana := args[6]
+	contact := args[7]
+	Balance := 50000
+	userType := args[8]
+	
 
-	var user = User{id, "User", name, email, passwordHash, Address, Contact, key, Balance, userType}
+	var user = User{userID, name, email, passwordHash, division, district, village, thana, contact, Balance, userType, "User"}
 	fmt.Println("User created In register function:", user)
 	userAsBytes, _ := json.Marshal(user)
-	APIstub.PutState(id, userAsBytes)
+	APIstub.PutState(userID, userAsBytes)
 	fmt.Println("User created In register function:", userAsBytes)
 	return shim.Success([]byte(userAsBytes))
 
-}
-func getUser(APIstub shim.ChaincodeStubInterface, email string) User {
-	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "User").addSelector("Email", email).getQueryString()
-	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
-	var userData User
-	_ = json.Unmarshal(user, &userData)
-	return userData
-}
-
-//func getKind(APIstub shim.ChaincodeStubInterface, CropKind string) User {
-//	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "Crop").addSelector("CropKind", CropKind).getQueryString()
-//	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
-//	var userData User
-//	_ = json.Unmarshal(user, &userData)
-//	return userData
-//}
-
-func getUserById(APIstub shim.ChaincodeStubInterface, Id string) User {
-	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "User").addSelector("Id", Id).getQueryString()
-	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
-	var userData1 User
-	_ = json.Unmarshal(user, &userData1)
-	return userData1
-}
-func getCrop(APIstub shim.ChaincodeStubInterface, Id string) Crop {
-	cropQuery1 := newCouchQueryBuilder().addSelector("Doctype", "Crop").addSelector("Id", Id).getQueryString()
-	crop, _ := lastQueryValueForQueryString(APIstub, cropQuery1)
-	var cropData Crop
-	_ = json.Unmarshal(crop, &cropData)
-	return cropData
 }
 
 func (s *SmartContract) login(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
@@ -187,6 +171,32 @@ func (s *SmartContract) login(APIstub shim.ChaincodeStubInterface, args []string
 	userAsBytes, _ := json.Marshal(user)
 	return shim.Success([]byte(userAsBytes))
 }
+
+func getUser(APIstub shim.ChaincodeStubInterface, email string) User {
+	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "User").addSelector("Email", email).getQueryString()
+	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
+	var userData User
+	_ = json.Unmarshal(user, &userData)
+	return userData
+}
+
+func getUserByID(APIstub shim.ChaincodeStubInterface, ID string) User {
+	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "User").addSelector("UserID", ID).getQueryString()
+	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
+	var userData1 User
+	_ = json.Unmarshal(user, &userData1)
+	return userData1
+}
+
+//func getCrop(APIstub shim.ChaincodeStubInterface, Id string) Crop {
+//	cropQuery1 := newCouchQueryBuilder().addSelector("Doctype", "Crop").addSelector("Id", Id).getQueryString()
+//	crop, _ := lastQueryValueForQueryString(APIstub, cropQuery1)
+//	var cropData Crop
+//	_ = json.Unmarshal(crop, &cropData)
+//	return cropData
+//}
+
+
 
 func (s *SmartContract) queryByKind(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
@@ -224,37 +234,37 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Respo
 	return shim.Success(nil)
 }
 
-func (s *SmartContract) createCrops(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
-
-	var cropId string = utils.RandomString()
-	var id = cropId
-	var ownerid string = args[0]
-	var ownername string = args[1]
-	var cropKind string = args[2]
-	quantity, err := strconv.Atoi(args[3])
-	if err != nil {
-		fmt.Println("quantity must be an integer :/")
-	}
-	price, err := strconv.Atoi(args[4])
-	if err != nil {
-		fmt.Println("Price must be an integer :/")
-	}
-
-	var docType string = "Crop"
-	var crop = Crop{id, cropId, ownerid, ownername, cropKind, quantity, price, docType}
-	cropAsBytes, err := json.Marshal(crop)
-
-	if err != nil {
-		return shim.Error(err.Error())
-	}
-
-	err = APIstub.PutState(id, cropAsBytes)
-	if err != nil {
-		return shim.Error(err.Error())
-	}
-
-	return shim.Success(nil)
-}
+//func (s *SmartContract) createCrops(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+//
+//	var cropId string = utils.RandomString()
+//	var id = cropId
+//	var ownerid string = args[0]
+//	var ownername string = args[1]
+//	var cropKind string = args[2]
+//	quantity, err := strconv.Atoi(args[3])
+//	if err != nil {
+//		fmt.Println("quantity must be an integer :/")
+//	}
+//	price, err := strconv.Atoi(args[4])
+//	if err != nil {
+//		fmt.Println("Price must be an integer :/")
+//	}
+//
+//	var docType string = "Crop"
+//	var crop = Crop{id, cropId, ownerid, ownername, cropKind, quantity, price, docType}
+//	cropAsBytes, err := json.Marshal(crop)
+//
+//	if err != nil {
+//		return shim.Error(err.Error())
+//	}
+//
+//	err = APIstub.PutState(id, cropAsBytes)
+//	if err != nil {
+//		return shim.Error(err.Error())
+//	}
+//
+//	return shim.Success(nil)
+//}
 
 func (s *SmartContract) queryAllCrops(APIstub shim.ChaincodeStubInterface) sc.Response {
 
@@ -293,61 +303,61 @@ func (s *SmartContract) queryBuyHistory(APIstub shim.ChaincodeStubInterface, arg
 
 }
 
-func (s *SmartContract) BuyCrops(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
-
-	if len(args) != 3 {
-		return shim.Error("Incorrect number of arguments. Expecting 4")
-	}
-	cropID := args[0]
-	buyerId := args[1]
-	quan, err := strconv.Atoi(args[2])
-	if err != nil {
-		fmt.Println("quantity must be an integer :/")
-	}
-	cropData := getCrop(APIstub, cropID)
-	ownerId := cropData.OwnerId
-	ownerData := getUserById(APIstub, ownerId)
-	buyerData := getUserById(APIstub, buyerId)
-	newPrice := cropData.Price * quan
-
-	if buyerData.Balance >= newPrice {
-		buyerData.Balance = buyerData.Balance - newPrice
-		ownerData.Balance = ownerData.Balance + newPrice
-		cropData.Quantity = cropData.Quantity - quan
-
-		id := utils.RandomString()
-		buyerCrop := Crop{id, id, buyerId, cropData.OwnerName, cropData.CropKind, quan, cropData.Price, cropData.Doctype}
-
-		//crop er amount kombe
-		cropAsBytes, _ := json.Marshal(cropData)
-		APIstub.PutState(cropData.Id, cropAsBytes)
-		fmt.Println("after update", cropData)
-
-		// buyer er jnno crop create hbe
-		buyerCropAsBytes, _ := json.Marshal(buyerCrop)
-		APIstub.PutState(buyerCrop.Id, buyerCropAsBytes)
-		fmt.Println("after update", buyerData)
-
-		//buyer er taka koima jabe
-		buyerDataAsBytes, _ := json.Marshal(buyerData)
-		APIstub.PutState(buyerData.Id, buyerDataAsBytes)
-
-		//seller er tk barbe
-		ownererDataAsBytes, _ := json.Marshal(ownerData)
-		APIstub.PutState(ownerData.Id, ownererDataAsBytes)
-
-		trans_id := utils.RandomString()
-		trasn_history := Transaction{trans_id, cropID, buyerId, ownerId, cropData.CropKind, buyerCrop.Quantity, cropData.Price, "Transaction"}
-
-		transAsBytes, _ := json.Marshal(trasn_history)
-		APIstub.PutState(trans_id, transAsBytes)
-		return shim.Success(nil)
-
-	} else {
-		return shim.Error("error")
-	}
-
-}
+//func (s *SmartContract) BuyCrops(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+//
+//	if len(args) != 3 {
+//		return shim.Error("Incorrect number of arguments. Expecting 4")
+//	}
+//	cropID := args[0]
+//	buyerId := args[1]
+//	quan, err := strconv.Atoi(args[2])
+//	if err != nil {
+//		fmt.Println("quantity must be an integer :/")
+//	}
+//	cropData := getCrop(APIstub, cropID)
+//	ownerId := cropData.OwnerId
+//	ownerData := getUserById(APIstub, ownerId)
+//	buyerData := getUserById(APIstub, buyerId)
+//	newPrice := cropData.Price * quan
+//
+//	if buyerData.Balance >= newPrice {
+//		buyerData.Balance = buyerData.Balance - newPrice
+//		ownerData.Balance = ownerData.Balance + newPrice
+//		cropData.Quantity = cropData.Quantity - quan
+//
+//		id := utils.RandomString()
+//		buyerCrop := Crop{id, id, buyerId, cropData.OwnerName, cropData.CropKind, quan, cropData.Price, cropData.Doctype}
+//
+//		//crop er amount kombe
+//		cropAsBytes, _ := json.Marshal(cropData)
+//		APIstub.PutState(cropData.Id, cropAsBytes)
+//		fmt.Println("after update", cropData)
+//
+//		// buyer er jnno crop create hbe
+//		buyerCropAsBytes, _ := json.Marshal(buyerCrop)
+//		APIstub.PutState(buyerCrop.Id, buyerCropAsBytes)
+//		fmt.Println("after update", buyerData)
+//
+//		//buyer er taka koima jabe
+//		buyerDataAsBytes, _ := json.Marshal(buyerData)
+//		APIstub.PutState(buyerData.Id, buyerDataAsBytes)
+//
+//		//seller er tk barbe
+//		ownererDataAsBytes, _ := json.Marshal(ownerData)
+//		APIstub.PutState(ownerData.Id, ownererDataAsBytes)
+//
+//		trans_id := utils.RandomString()
+//		trasn_history := Transaction{trans_id, cropID, buyerId, ownerId, cropData.CropKind, buyerCrop.Quantity, cropData.Price, "Transaction"}
+//
+//		transAsBytes, _ := json.Marshal(trasn_history)
+//		APIstub.PutState(trans_id, transAsBytes)
+//		return shim.Success(nil)
+//
+//	} else {
+//		return shim.Error("error")
+//	}
+//
+//}
 
 func (s *SmartContract) userProfile(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
