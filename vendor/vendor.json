@@ -1,0 +1,914 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "f1cnG4Whs8oWc5d54czu+LgT8rE=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/Azure/go-ansiterm",
+			"path": "github.com/Azure/go-ansiterm",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "3/UphB+6Hbx5otA4PjFjvObT+L4=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/Azure/go-ansiterm/winterm",
+			"path": "github.com/Azure/go-ansiterm/winterm",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "xszbuM/88PjnW0GM8Febc1D8jaM=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/BurntSushi/toml",
+			"path": "github.com/BurntSushi/toml",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "o6YV4JZU20hWyrEGqxPXeWqoFYo=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/Microsoft/go-winio",
+			"path": "github.com/Microsoft/go-winio",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "TGmRepnlhJX0s4GO7Oc/XyuTMqg=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/Nvveen/Gotty",
+			"path": "github.com/Nvveen/Gotty",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "nJMI8nVu3G++UcSC0pTEpm2HazE=",
+			"path": "github.com/cd1/utils-golang",
+			"revision": "e01f1641e91fdcf4590dcebc6a6722305611fe94",
+			"revisionTime": "2014-09-18T20:44:11Z"
+		},
+		{
+			"checksumSHA1": "GqIrOttKaO7k6HIaHQLPr3cY7rY=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/containerd/continuity/pathdriver",
+			"path": "github.com/containerd/continuity/pathdriver",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "iYT7abLMy0Vfyy8nwoDZYirLrI4=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types",
+			"path": "github.com/docker/docker/api/types",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "/jF0HVFiLzUUuywSjp4F/piM7BM=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/blkiodev",
+			"path": "github.com/docker/docker/api/types/blkiodev",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "LdXOEC1pDlFHWCWx8s2tYYyZb4w=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/container",
+			"path": "github.com/docker/docker/api/types/container",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "y9EA6+kZQLx6kCM277CFHTm4eiw=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/filters",
+			"path": "github.com/docker/docker/api/types/filters",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "k9CaJVvYL7SxcIP72ng/YcOuF9k=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/mount",
+			"path": "github.com/docker/docker/api/types/mount",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "IggTTG/yCDaV9SjtQz5SSarqUtc=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/network",
+			"path": "github.com/docker/docker/api/types/network",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "m4Jg5WnW75I65nvkEno8PElSXik=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/registry",
+			"path": "github.com/docker/docker/api/types/registry",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "OQEUS/2J2xVHpfvcsxcXzYqBSeY=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/strslice",
+			"path": "github.com/docker/docker/api/types/strslice",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "cGHzqkRHplhIMH9P82wAOTxWCEM=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/swarm",
+			"path": "github.com/docker/docker/api/types/swarm",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "FFan1e4UWQO1to3nT60guRRoWa8=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/swarm/runtime",
+			"path": "github.com/docker/docker/api/types/swarm/runtime",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "lD5ZKfngr8Hj18ABTRkpUIhUmDk=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/api/types/versions",
+			"path": "github.com/docker/docker/api/types/versions",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "7anxTh5qUD5FqLFzmNylsfGdh9g=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/opts",
+			"path": "github.com/docker/docker/opts",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "2NjbaO1VZjiahEra27iwl8YDrZY=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/archive",
+			"path": "github.com/docker/docker/pkg/archive",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Grn01ilcclpxebiubtvOie9cJOs=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/fileutils",
+			"path": "github.com/docker/docker/pkg/fileutils",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "y37I+5AS96wQSiAxOayiMgnZawA=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/homedir",
+			"path": "github.com/docker/docker/pkg/homedir",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "2K1kJ8yH2sMzuGH2aBpvbaXE+ao=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/idtools",
+			"path": "github.com/docker/docker/pkg/idtools",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "4fV83jYhuLK2IGZBakU8ze5gv8g=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/ioutils",
+			"path": "github.com/docker/docker/pkg/ioutils",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "or3aL5DlcUW38pazQAydN6ZD6Jo=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/jsonmessage",
+			"path": "github.com/docker/docker/pkg/jsonmessage",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "EXiIm2xIL7Ds+YsQUx8Z3eUYPtI=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/longpath",
+			"path": "github.com/docker/docker/pkg/longpath",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "IaLUlgL27e2W5LVWvncHgPWKffg=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/mount",
+			"path": "github.com/docker/docker/pkg/mount",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "dj8atalGWftfM9vdzCsh9YF1Seg=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/pools",
+			"path": "github.com/docker/docker/pkg/pools",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "qSXbkyhz4Q4QOhfZbes8/WK0w/Q=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/stdcopy",
+			"path": "github.com/docker/docker/pkg/stdcopy",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "E6YGk+mLX+kID6fxKWNN6gbH6eg=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/system",
+			"path": "github.com/docker/docker/pkg/system",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "ehuKrlcvbrTfIYFo9zzWzE1lQxo=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/term",
+			"path": "github.com/docker/docker/pkg/term",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "RbKd6O8P1UnaoxbdmV6eukac69M=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/docker/pkg/term/windows",
+			"path": "github.com/docker/docker/pkg/term/windows",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "JbiWTzH699Sqz25XmDlsARpMN9w=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/go-connections/nat",
+			"path": "github.com/docker/go-connections/nat",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "4MfCFBWd7AePvoREfhlDfoZU1sI=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/docker/go-units",
+			"path": "github.com/docker/go-units",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "rdPwDSll3wtWyd0/pgq/bz0MWVI=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/fsouza/go-dockerclient",
+			"path": "github.com/fsouza/go-dockerclient",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "5BDC60/+fxUvvgUsHDdJAFrEVLI=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/gogo/protobuf/proto",
+			"path": "github.com/gogo/protobuf/proto",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "GaJLoEuMGnP5ofXvuweAI4wx06U=",
+			"origin": "Smart-Agro/chaincode/abac/go/vendor/github.com/golang/protobuf/proto",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "327161e501323d5e102d2d98c92219be810583cb",
+			"revisionTime": "2020-01-27T22:05:30Z"
+		},
+		{
+			"checksumSHA1": "ZP0Cc225YOOnF+DVd1vJCZHQmQQ=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/golang/protobuf/ptypes",
+			"path": "github.com/golang/protobuf/ptypes",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "IubdoixHTzVw8GsrmhlrmCIOhNI=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/golang/protobuf/ptypes/any",
+			"path": "github.com/golang/protobuf/ptypes/any",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "7QMuWbH0EvmIO6Ja4cfdsxEwV8s=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/golang/protobuf/ptypes/duration",
+			"path": "github.com/golang/protobuf/ptypes/duration",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "MT8UJ2MbrtZlFTHGjuQ7DUGcijs=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/golang/protobuf/ptypes/empty",
+			"path": "github.com/golang/protobuf/ptypes/empty",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "CrwGWVL7Al6Avqo3SStn4ORvovc=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/golang/protobuf/ptypes/timestamp",
+			"path": "github.com/golang/protobuf/ptypes/timestamp",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "nulySUSurX3c7DAUThJCKNI/Dds=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/hyperledger/fabric-amcl/amcl",
+			"path": "github.com/hyperledger/fabric-amcl/amcl",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "8jFGbc+tZmzRV5v1a4FdKN//mdM=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/hyperledger/fabric-amcl/amcl/FP256BN",
+			"path": "github.com/hyperledger/fabric-amcl/amcl/FP256BN",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "ixaBp/a6i3HBxR3fDFYTUUdnMuA=",
+			"path": "github.com/hyperledger/fabric/bccsp",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "1nhoniRKI+qfrDYqK/0GpYz4Zv4=",
+			"path": "github.com/hyperledger/fabric/bccsp/factory",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "mL6IDm7+GrM+h4a0v88EytHjb+g=",
+			"path": "github.com/hyperledger/fabric/bccsp/pkcs11",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "/rHBndte/k5fROkvI72riM0TtFQ=",
+			"path": "github.com/hyperledger/fabric/bccsp/signer",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "pdvxb5AJvpFeXgCZ1xFhSKvJUOI=",
+			"path": "github.com/hyperledger/fabric/bccsp/sw",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "6VBws8YPmb8k0EJ7VjpYqJIMof0=",
+			"path": "github.com/hyperledger/fabric/bccsp/utils",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "U+rIze0qt5xVUhb0N8KecL+nDVI=",
+			"path": "github.com/hyperledger/fabric/common/crypto",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "bJGbjvNRGfR/S4yRVfmJITzkxoI=",
+			"path": "github.com/hyperledger/fabric/common/flogging",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "jx97BViBQYT60E4Hji0O/BI9QXw=",
+			"path": "github.com/hyperledger/fabric/common/ledger",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "A14OlmsAUL80seRL3/iPc63/lN8=",
+			"path": "github.com/hyperledger/fabric/common/metadata",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "gq7ggqXqOtCzPnNNslom3EixDgM=",
+			"path": "github.com/hyperledger/fabric/common/util",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "VL/N/s3kMdgZ7YVrMvRrwT0OrlM=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "QHyPNWBT5rJP6XfFccEwJSERERs=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms/car",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "TXMSleT2cAmrCzWlNeX9Ff44rho=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms/ccmetadata",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "RxI0RCkrx5STI+umtfMTUre+kOU=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms/golang",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Y6/Q80c9n7qwstYrN/FYRUc+rJs=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms/java",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "drVhwLdgh6DdfX6E0A4ldfRdmCg=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms/node",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "VQ24ep1HNny734tA17CVVbOTo+s=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/platforms/util",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "RviDV8KdUuzlYqxQLhx2ztI/lWo=",
+			"path": "github.com/hyperledger/fabric/core/chaincode/shim",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "XGpUl1X+7ly1ski4Pc+N9ozfVv8=",
+			"origin": "Smart-Agro/chaincode/abac/go/vendor/github.com/hyperledger/fabric/core/chaincode/shim/ext/attrmgr",
+			"path": "github.com/hyperledger/fabric/core/chaincode/shim/ext/attrmgr",
+			"revision": "327161e501323d5e102d2d98c92219be810583cb",
+			"revisionTime": "2020-01-27T22:05:30Z"
+		},
+		{
+			"checksumSHA1": "vFuT7942CfsCcH9IG3zHmQ4d/oI=",
+			"origin": "Smart-Agro/chaincode/abac/go/vendor/github.com/hyperledger/fabric/core/chaincode/shim/ext/cid",
+			"path": "github.com/hyperledger/fabric/core/chaincode/shim/ext/cid",
+			"revision": "327161e501323d5e102d2d98c92219be810583cb",
+			"revisionTime": "2020-01-27T22:05:30Z"
+		},
+		{
+			"checksumSHA1": "5IJ51bDbXgL7NvzoWIMY5Uuxam0=",
+			"path": "github.com/hyperledger/fabric/core/comm",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "p9rCJInevSS+CEKjoy2fTpQ/iyU=",
+			"path": "github.com/hyperledger/fabric/core/config",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "LgECV4KQg+3veCJTAFXaQRbmb4Q=",
+			"path": "github.com/hyperledger/fabric/core/container/util",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "xIdsmorF1r6jym6Tz5UmzAvxhN8=",
+			"path": "github.com/hyperledger/fabric/idemix",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "DAK5E8c5Fw7/qSJ/3ggohCPf7t8=",
+			"path": "github.com/hyperledger/fabric/msp",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "W/ME8t9C2/kIEYG7Ela2XuVT9s8=",
+			"path": "github.com/hyperledger/fabric/protos/common",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "0rdzl0Uan3ZqKtG8C99AF/5HhQI=",
+			"path": "github.com/hyperledger/fabric/protos/ledger/queryresult",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "kMA3IoI8xhSIuCsn3CMOFzIZiYo=",
+			"path": "github.com/hyperledger/fabric/protos/msp",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "lpYx7gQ2RrdhMarfi1rA+HbyM/U=",
+			"path": "github.com/hyperledger/fabric/protos/peer",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Eh8HuhOP9hRCTXIN1upsMfcubcM=",
+			"path": "github.com/hyperledger/fabric/protos/utils",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "GnYsUxBxUHGDBIaCeQbMdYUCzkA=",
+			"path": "github.com/jmoiron/jsonq",
+			"revision": "e874b168d07ecc7808bc950a17998a8aa3141d82",
+			"revisionTime": "2015-05-11T02:39:44Z"
+		},
+		{
+			"checksumSHA1": "BUWTk73fpP/Uzbfb1Bq8HRtxOhQ=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/kr/pretty",
+			"path": "github.com/kr/pretty",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Od3qBN/T8IKBAPdZ8nDb9FH/lSM=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/kr/text",
+			"path": "github.com/kr/text",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "VuNpulG99K15S40o0R+KQ1mVXT8=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/magiconair/properties",
+			"path": "github.com/magiconair/properties",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "5zIOQEQVkIy7oGKwqvSCc3NkVYQ=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/miekg/pkcs11",
+			"path": "github.com/miekg/pkcs11",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "iaME47srrw9OS0uf3cVWOzNKN6c=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/mitchellh/mapstructure",
+			"path": "github.com/mitchellh/mapstructure",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "AuSbnsHCeoprvNSurGPgVqvg/eE=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/op/go-logging",
+			"path": "github.com/op/go-logging",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "xK+38jQJrwsSVAlZUBR5PgaGxyY=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/opencontainers/go-digest",
+			"path": "github.com/opencontainers/go-digest",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "0vsIK/09u0FwE89WDfSFJvOXui4=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/opencontainers/image-spec/specs-go",
+			"path": "github.com/opencontainers/image-spec/specs-go",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "jdbXRRzeu0njLE9/nCEZG+Yg/Jk=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/opencontainers/image-spec/specs-go/v1",
+			"path": "github.com/opencontainers/image-spec/specs-go/v1",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "xo2LfoL27cGF6cChWvew2KfhpNI=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/opencontainers/runc/libcontainer/system",
+			"path": "github.com/opencontainers/runc/libcontainer/system",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "7tZiMvVKwDTtqedmi6VGVhB07A4=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/opencontainers/runc/libcontainer/user",
+			"path": "github.com/opencontainers/runc/libcontainer/user",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "DTy0iJ2w5C+FDsN9EnzfhNmvS+o=",
+			"origin": "Smart-Agro/chaincode/abac/go/vendor/github.com/pkg/errors",
+			"path": "github.com/pkg/errors",
+			"revision": "327161e501323d5e102d2d98c92219be810583cb",
+			"revisionTime": "2020-01-27T22:05:30Z"
+		},
+		{
+			"checksumSHA1": "ua2QhRjKiZP5afbG6KoJQMNPpt4=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/sirupsen/logrus",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Js7W0ucuZfojUndnR9sVEQRF1pw=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/spf13/cast",
+			"path": "github.com/spf13/cast",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "HUkZoM9k1+1IQWxr/I38Dt3BE6Q=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/spf13/jwalterweatherman",
+			"path": "github.com/spf13/jwalterweatherman",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "v6hZaiQDBdryQBZhrwX5bBifmvs=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/spf13/pflag",
+			"path": "github.com/spf13/pflag",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "5rrOYPS2A9uv3vv6u6Sw4de9RaU=",
+			"origin": "github.com/hyperledger/fabric/vendor/github.com/spf13/viper",
+			"path": "github.com/spf13/viper",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "RqGZ4+kml1FpFU//nZKlu/uBiJY=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/crypto/sha3",
+			"path": "golang.org/x/crypto/sha3",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "BGm8lKZmvJbf/YOJLeL1rw2WVjA=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/crypto/ssh/terminal",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/context",
+			"path": "golang.org/x/net/context",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "WHc3uByvGaMcnSoI21fhzYgbOgg=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/context/ctxhttp",
+			"path": "golang.org/x/net/context/ctxhttp",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "ykGPeG3KGmuhKqglhyn0uQVOxUc=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/http2",
+			"path": "golang.org/x/net/http2",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "LW///cttbVyQo4Qh11kdIt0VMjs=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/http2/hpack",
+			"path": "golang.org/x/net/http2/hpack",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "RcrB7tgYS/GMW4QrwVdMOTNqIU8=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/idna",
+			"path": "golang.org/x/net/idna",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "UxahDzW2v4mf/+aFxruuupaoIwo=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/internal/timeseries",
+			"path": "golang.org/x/net/internal/timeseries",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "3xyuaSNmClqG4YWC7g0isQIbUTc=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/lex/httplex",
+			"path": "golang.org/x/net/lex/httplex",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "rJn3m/27kO+2IU6KCCZ74Miby+8=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/net/trace",
+			"path": "golang.org/x/net/trace",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "jkF4vwTYYRXLJtRDgs5Jr6eaU3Q=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/sys/unix",
+			"path": "golang.org/x/sys/unix",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "eQq+ZoTWPjyizS9XalhZwfGjQao=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/sys/windows",
+			"path": "golang.org/x/sys/windows",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "CbpjEkkOeh0fdM/V8xKDdI0AA88=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/text/secure/bidirule",
+			"path": "golang.org/x/text/secure/bidirule",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "ziMb9+ANGRJSSIuxYdRbA+cDRBQ=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/text/transform",
+			"path": "golang.org/x/text/transform",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "w8kDfZ1Ug+qAcVU0v8obbu3aDOY=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/text/unicode/bidi",
+			"path": "golang.org/x/text/unicode/bidi",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "BCNYmf4Ek93G4lk5x3ucNi/lTwA=",
+			"origin": "github.com/hyperledger/fabric/vendor/golang.org/x/text/unicode/norm",
+			"path": "golang.org/x/text/unicode/norm",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Tc3BU26zThLzcyqbVtiSEp7EpU8=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/genproto/googleapis/rpc/status",
+			"path": "google.golang.org/genproto/googleapis/rpc/status",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "tq9C3jyxlSL8GGr7YtANQnCE4N0=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc",
+			"path": "google.golang.org/grpc",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "xBhmO0Vn4kzbmySioX+2gBImrkk=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/balancer",
+			"path": "google.golang.org/grpc/balancer",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "CPWX/IgaQSR3+78j4sPrvHNkW+U=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/balancer/base",
+			"path": "google.golang.org/grpc/balancer/base",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "DJ1AtOk4Pu7bqtUMob95Hw8HPNw=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/balancer/roundrobin",
+			"path": "google.golang.org/grpc/balancer/roundrobin",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "j8Qs+yfgwYYOtodB/1bSlbzV5rs=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/codes",
+			"path": "google.golang.org/grpc/codes",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "XH2WYcDNwVO47zYShREJjcYXm0Y=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/connectivity",
+			"path": "google.golang.org/grpc/connectivity",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "KthiDKNPHMeIu967enqtE4NaZzI=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/credentials",
+			"path": "google.golang.org/grpc/credentials",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "mJTBJC0n9J2CV+tHX+dJosYOZmg=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/encoding",
+			"path": "google.golang.org/grpc/encoding",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "LKKkn7EYA+Do9Qwb2/SUKLFNxoo=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/encoding/proto",
+			"path": "google.golang.org/grpc/encoding/proto",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "7A8YSxvEgjJCHKoD9KArEHlPH3s=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/grpclb/grpc_lb_v1/messages",
+			"path": "google.golang.org/grpc/grpclb/grpc_lb_v1/messages",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "ntHev01vgZgeIh5VFRmbLx/BSTo=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/grpclog",
+			"path": "google.golang.org/grpc/grpclog",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "Qvf3zdmRCSsiM/VoBv0qB/naHtU=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/internal",
+			"path": "google.golang.org/grpc/internal",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "hcuHgKp8W0wIzoCnNfKI8NUss5o=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/keepalive",
+			"path": "google.golang.org/grpc/keepalive",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "RUgjR0iUFLCgdLAnNqiH+8jTzuk=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/metadata",
+			"path": "google.golang.org/grpc/metadata",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "5dwF592DPvhF2Wcex3m7iV6aGRQ=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/naming",
+			"path": "google.golang.org/grpc/naming",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "n5EgDdBqFMa2KQFhtl+FF/4gIFo=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/peer",
+			"path": "google.golang.org/grpc/peer",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "qbA3XLvX0RTvaqQefvFDtE9GaJs=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/resolver",
+			"path": "google.golang.org/grpc/resolver",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "WpWF+bDzObsHf+bjoGpb/abeFxo=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/resolver/dns",
+			"path": "google.golang.org/grpc/resolver/dns",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "zs9M4xE8Lyg4wvuYvR00XoBxmuw=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/resolver/passthrough",
+			"path": "google.golang.org/grpc/resolver/passthrough",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "YclPgme2gT3S0hTkHVdE1zAxJdo=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/stats",
+			"path": "google.golang.org/grpc/stats",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "FXiovlBmrYdS4QT0Z4nV+x+v5HI=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/status",
+			"path": "google.golang.org/grpc/status",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "qvArRhlrww5WvRmbyMF2mUfbJew=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/tap",
+			"path": "google.golang.org/grpc/tap",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "sg7RY87LaWXaZMj0cuLQQaJJQYo=",
+			"origin": "github.com/hyperledger/fabric/vendor/google.golang.org/grpc/transport",
+			"path": "google.golang.org/grpc/transport",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		},
+		{
+			"checksumSHA1": "7VYQdUw19TAjD8t9e5YU524k3zE=",
+			"origin": "github.com/hyperledger/fabric/vendor/gopkg.in/yaml.v2",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "aabf3a63282e952fb87801d32994df67cebf6dee",
+			"revisionTime": "2019-06-25T14:43:27Z"
+		}
+	],
+	"rootPath": "Smart-Agro"
+}

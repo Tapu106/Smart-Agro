@@ -31,56 +31,51 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
+
 	utils "github.com/cd1/utils-golang"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	sc "github.com/hyperledger/fabric/protos/peer"
-	"strconv"
 )
 
-// Define the Smart Contract structure
 type SmartContract struct {
 }
 
-// Define the car structure, with 4 properties.  Structure tags are used by encoding/json library
-type Car struct {
-	Make   string `json:"make"`
-	Model  string `json:"model"`
-	Colour string `json:"colour"`
-	Owner  string `json:"owner"`
-}
-
 type User struct {
-	Id           string
+	UserID           string
 	Doctype      string
 	Name         string
 	Email        string
 	PasswordHash string
-	Address      string
+	Division     string
+	District     string
+	Village      string
+	Thana        string
 	Contact      string
 	Key          string
 	Balance      int
-	UserType string
+	UserType     string
 }
-type Crop struct {
-	Id       string
-	CropId   string
-	OwnerId  string
+type OwnedCrops struct {
+	CropID    string
+	OwnerID   string
 	OwnerName string
-	CropKind string
-	Quantity int
-	Price    int
-	Doctype  string
+	CropKind  string
+	CropName  string
+	Quantity  int
+	Price     int
+	Doctype   string
 }
 
-type Transaction struct{
-	Id string
-	CropId string
-	BuyerId string
-	OwnerId string
-	CropKind string
+type Transaction struct {
+	Id         string
+	CropId     string
+	BuyerId    string
+	OwnerId    string
+	CropKind   string
 	CropAmount int
-	Price int
-	Doctype string
+	Price      int
+	Doctype    string
 }
 
 /*
@@ -116,7 +111,7 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.createCrops(APIstub, args)
 	} else if function == "querySellHistory" {
 		return s.querySellHistory(APIstub, args)
-	}else if function == "queryBuyHistory" {
+	} else if function == "queryBuyHistory" {
 		return s.queryBuyHistory(APIstub, args)
 	} else if function == "userProfile" {
 		return s.userProfile(APIstub, args)
@@ -162,8 +157,6 @@ func getUser(APIstub shim.ChaincodeStubInterface, email string) User {
 //	return userData
 //}
 
-
-
 func getUserById(APIstub shim.ChaincodeStubInterface, Id string) User {
 	userQuery1 := newCouchQueryBuilder().addSelector("Doctype", "User").addSelector("Id", Id).getQueryString()
 	user, _ := lastQueryValueForQueryString(APIstub, userQuery1)
@@ -205,7 +198,7 @@ func (s *SmartContract) queryByKind(APIstub shim.ChaincodeStubInterface, args []
 	//	return shim.Error(err.Error())
 	//}
 	//return shim.Success(queryResults)
-	queryString := newCouchQueryBuilder().addSelector("Doctype","Crop").addSelector("CropKind",cropKind).getQueryString()
+	queryString := newCouchQueryBuilder().addSelector("Doctype", "Crop").addSelector("CropKind", cropKind).getQueryString()
 	queryResults, err := getQueryResultForQueryString(APIstub, queryString)
 	if err != nil {
 		return shim.Error(err.Error())
@@ -251,15 +244,14 @@ func (s *SmartContract) createCrops(APIstub shim.ChaincodeStubInterface, args []
 	var crop = Crop{id, cropId, ownerid, ownername, cropKind, quantity, price, docType}
 	cropAsBytes, err := json.Marshal(crop)
 
-	if err!=nil{
+	if err != nil {
 		return shim.Error(err.Error())
 	}
 
 	err = APIstub.PutState(id, cropAsBytes)
-	if err!=nil{
+	if err != nil {
 		return shim.Error(err.Error())
 	}
-
 
 	return shim.Success(nil)
 }
@@ -275,11 +267,11 @@ func (s *SmartContract) queryAllCrops(APIstub shim.ChaincodeStubInterface) sc.Re
 	return shim.Success(queryResults)
 
 }
-func (s *SmartContract) querySellHistory(APIstub shim.ChaincodeStubInterface, args[]string) sc.Response {
+func (s *SmartContract) querySellHistory(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
 	ownerId := args[0]
 	//queryString := fmt.Sprintf("{\"selector\":{\"DocType\":\"Transaction\",\"OwnerId\": \"%s\"}}", ownerId)
-	queryString := newCouchQueryBuilder().addSelector("Doctype","Transaction").addSelector("OwnerId",ownerId).getQueryString()
+	queryString := newCouchQueryBuilder().addSelector("Doctype", "Transaction").addSelector("OwnerId", ownerId).getQueryString()
 	queryResults, err := getQueryResultForQueryString(APIstub, queryString)
 	if err != nil {
 		return shim.Error(err.Error())
@@ -288,11 +280,11 @@ func (s *SmartContract) querySellHistory(APIstub shim.ChaincodeStubInterface, ar
 
 }
 
-func (s *SmartContract) queryBuyHistory(APIstub shim.ChaincodeStubInterface, args[]string) sc.Response {
+func (s *SmartContract) queryBuyHistory(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
 	BuyerId := args[0]
 	//queryString := fmt.Sprintf("{\"selector\":{\"DocType\":\"Transaction\",\"BuyerId\": \"%s\"}}", BuyerId)
-	queryString := newCouchQueryBuilder().addSelector("Doctype","Transaction").addSelector("BuyerId",BuyerId).getQueryString()
+	queryString := newCouchQueryBuilder().addSelector("Doctype", "Transaction").addSelector("BuyerId", BuyerId).getQueryString()
 	queryResults, err := getQueryResultForQueryString(APIstub, queryString)
 	if err != nil {
 		return shim.Error(err.Error())
@@ -316,7 +308,7 @@ func (s *SmartContract) BuyCrops(APIstub shim.ChaincodeStubInterface, args []str
 	ownerId := cropData.OwnerId
 	ownerData := getUserById(APIstub, ownerId)
 	buyerData := getUserById(APIstub, buyerId)
-	newPrice := cropData.Price*quan
+	newPrice := cropData.Price * quan
 
 	if buyerData.Balance >= newPrice {
 		buyerData.Balance = buyerData.Balance - newPrice
@@ -344,29 +336,26 @@ func (s *SmartContract) BuyCrops(APIstub shim.ChaincodeStubInterface, args []str
 		ownererDataAsBytes, _ := json.Marshal(ownerData)
 		APIstub.PutState(ownerData.Id, ownererDataAsBytes)
 
-
 		trans_id := utils.RandomString()
-		trasn_history := Transaction{trans_id,cropID, buyerId, ownerId, cropData.CropKind,buyerCrop.Quantity,cropData.Price , "Transaction"}
+		trasn_history := Transaction{trans_id, cropID, buyerId, ownerId, cropData.CropKind, buyerCrop.Quantity, cropData.Price, "Transaction"}
 
-		transAsBytes,_ :=json.Marshal(trasn_history)
-		APIstub.PutState( trans_id,transAsBytes)
+		transAsBytes, _ := json.Marshal(trasn_history)
+		APIstub.PutState(trans_id, transAsBytes)
 		return shim.Success(nil)
 
-	}else {
+	} else {
 		return shim.Error("error")
 	}
-
-
 
 }
 
 func (s *SmartContract) userProfile(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	    user_info,err := APIstub.GetState(args[0])
+	user_info, err := APIstub.GetState(args[0])
 
-		if err !=nil{
-			return shim.Error("vul hoise")
-		}
+	if err != nil {
+		return shim.Error("vul hoise")
+	}
 
 	return shim.Success(user_info)
 
